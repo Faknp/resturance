@@ -1,0 +1,268 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ร้านอาหารดังในกรุงเทพ</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+    
+    <!-- W3 CSS template -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <style>
+    #mapid {
+    height: 800px;
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="w3-row">
+        <div id="mapid" class="w3-half"></div>
+        <div id="content" class="w3-half">
+        <table class="w3-table w3-striped">
+        <tr>
+        <th>ชื่อร้านอาหาร</th>
+        <th>ระดับ</th>
+        <th>ประเภท</th>
+        </tr>
+        <tr>
+        <td>น้ำตก A</td>
+        <td>ธรรมชาติ</td>
+        <td>ธรรมชาติ</td>
+        </tr>
+        </table>
+        </div>
+        </div>
+<script>
+    var map = L.map("mapid").setView([15.3235823304418, 100.88209406811933], 5);
+ 
+ var osm = L.tileLayer(
+ "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+ ).addTo(map);
+ var gsat = L.tileLayer(
+ "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+ ).addTo(map);
+ var OpenStreetMap_HOT = L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png").addTo(map);
+ 
+ var baseMaps = {
+ OSM: osm,
+GoogleSat: gsat,
+StreetMap_HOT: OpenStreetMap_HOT,
+ };
+ 
+ var nonthaburi = {
+    
+
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อร้านอาหาร": "ชอคโกแลต วิลล์",
+        "ระดับ": 10,
+        "ประเภท": "ร้านอาหาร"
+      },
+      "geometry": {
+        "coordinates": [
+          100.66386999999969,
+          13.811409335096329
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อร้านอาหาร": "ร้านปูเป็น",
+        "ระดับ": 10,
+        "ประเภท": "ร้านอาหาร"
+      },
+      "geometry": {
+        "coordinates": [
+          100.73154531371904,
+          6.916500266742602
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อร้านอาหาร": "Phuket Town Restaurant",
+        "ระดับ": 9,
+        "ประเภท": "ร้านอาหาร"
+      },
+      "geometry": {
+        "coordinates": [
+          100.61201599999941,
+          13.833088751979872
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อร้านอาหาร": "Baan Rub Rong",
+        "ระดับ": 9,
+        "ประเภท": "ร้านอาหาร"
+      },
+      "geometry": {
+        "coordinates": [
+          100.6504419999984,
+          13.689111187600673
+        ],
+        "type": "Point"
+      },
+      "id": 8
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อร้านอาหาร": "อ้อยหวาน",
+        "ระดับ": 9,
+        "ประเภท": "ร้านอาหาร"
+      },
+      "geometry": {
+        "coordinates": [
+          100.28044127116505,
+          13.753365337167637
+        ],
+        "type": "Point"
+      },
+      "id": 9
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อร้านอาหาร": "อรุณ",
+        "ระดับ": 10,
+        "ประเภท": "ร้านอาหาร"
+      },
+      "geometry": {
+        "coordinates": [
+          98.9937503762751,
+          18.786421939863573
+        ],
+        "type": "Point"
+      },
+      "id": 7
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อร้านอาหาร": "ต้นเครื่อง",
+        "ระดับ": 10,
+        "ประเภท": "ร้านอาหาร"
+      },
+      "geometry": {
+        "coordinates": [
+          100.57682480489052,
+          13.737602423392275
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อร้านอาหาร": "Simmer by Praha ",
+        "ระดับ": 9,
+        "ประเภท": "ร้านอาหาร"
+      },
+      "geometry": {
+        "coordinates": [
+          100.54461794830632,
+          13.736140959565091
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อร้านอาหาร": "นอร์มังดีเสต๊ก",
+        "ระดับ": 9,
+        "ประเภท": "ร้านอาหาร"
+      },
+      "geometry": {
+        "coordinates": [
+          100.6089869568512,
+          13.794671929820623
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ชื่อร้านอาหาร": "ตู้กับข้าว",
+        "ระดับ": 10,
+        "ประเภท": "ร้านอาหาร"
+      },
+      "geometry": {
+        "coordinates": [
+          100.77794499999789,
+          18.788831811642595
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}
+
+  // interaction by mouseover
+  var tourLayer = L.geoJSON(nonthaburi, {
+ pointToLayer: function (feature, latlng) {
+ return L.marker(latlng).bindPopup(feature.properties.ชื่อร้านอาหาร);
+ },
+ onEachFeature: function (feature, layer) {
+ layer.on("mouseover", function () {
+ document
+ .getElementById(feature.properties.ชื่อร้านอาหาร)
+ .classList.add("w3-red");
+ });
+ 
+ layer.on("mouseout", function () {
+ document
+ .getElementById(feature.properties.ชื่อร้านอาหาร)
+ .classList.remove("w3-red");
+ });
+ },
+ }).addTo(map);
+ 
+ var cont = "";
+ cont += "<table class='w3-table w3-striped'>";
+ cont += "<tr>";
+ cont += "<th>ชื่อร้านอาหาร</th>";
+ cont += "<th>ระดับ</th>";
+ cont += "<th>ประเภท</th>";
+ cont += "</tr>";
+ for (let i in nonthaburi.features) {
+ cont += "<tr id=" + nonthaburi.features[i].properties.ชื่อร้านอาหาร+ ">";
+ cont += "<td>" + nonthaburi.features[i].properties.ชื่อร้านอาหาร + "</td>";
+ cont += "<td>" + nonthaburi.features[i].properties.ระดับ + "</td>";
+ cont += "<td>" + nonthaburi.features[i].properties.ประเภท + "</td>";
+ cont += "</tr>";
+ }
+ cont += "</table>";
+ console.log(cont);
+ document.getElementById("content").innerHTML = cont;
+
+ var overlays = {Travel_nonthaburi: tourLayer};
+ //add leyer control
+ L.control.layers(baseMaps, overlays).addTo(map);
+</script>
+
+
+
+
+</body>
+</html>
